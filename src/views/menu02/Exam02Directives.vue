@@ -3,13 +3,24 @@
   <div class="card">
     <div class="card-header">Exam02Directives</div>
     <div class="card-body">
+      <!-- 데이터 바인딩 -->
       <div>
-        <img src="@/assets/photos/photo1.jpg" width="300px" />
-        <img v-bind:src="require(`@/assets/photos/${photoFileName}`)" width="300px" />
+        <img src="@/assets/photos/photo1.jpg" height="100px" />
+        <img v-bind:src="require(`@/assets/photos/${photoFileName}`)" height="100px" />
       </div>
       <hr />
+      <!-- 요소 숨김 여부 -->
+      <span v-if="sale" class="mr-2">
+        <img v-bind:src="require(`@/assets/photos/${photoFileName}`)" height="100px" />
+      </span>
+      <span v-show="sale">
+        <img v-bind:src="require(`@/assets/photos/${photoFileName}`)" height="100px" />
+      </span>
+      <!-- HTML 태그 처리 -->
+      <p>정보: {{ info }}</p>
+      <p>정보: <span v-html="info"></span></p>
+      <hr />
       <button @click="changeData()" class="btn btn-info btn-sm">변경</button>
-      <div></div>
     </div>
   </div>
 </template>
@@ -24,6 +35,8 @@ export default {
   data: function () {
     return {
       photoFileName: "photo2.jpg",
+      sale: true,
+      info: `<div style="background-color: #eeeeee">스타일 적용 확인</div>`,
     };
   },
   // 컴포넌트 메소드 정의
@@ -34,6 +47,7 @@ export default {
       } else {
         this.photoFileName = "photo2.jpg";
       }
+      this.sale = !this.sale;
     },
   },
 };
