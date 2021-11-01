@@ -1,10 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Menu01 from "./menu01";
-import Menu02 from "./menu02";
-import Menu03 from "./menu03";
-import Menu04 from "./menu04";
+import menu01 from "./menu01";
+import menu02 from "./menu02";
+import menu03 from "./menu03";
+import menu04 from "./menu04";
+import menu05 from "./menu05";
 // import product from './product';
 
 Vue.use(VueRouter);
@@ -24,10 +25,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   // 분리한 라우트 임포트 방법...product,
-  ...Menu01,
-  ...Menu02,
-  ...Menu03,
-  ...Menu04,
+  ...menu01,
+  ...menu02,
+  ...menu03,
+  ...menu04,
+  ...menu05,
 ];
 
 const router = new VueRouter({

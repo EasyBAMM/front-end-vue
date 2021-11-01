@@ -1,19 +1,19 @@
 <template>
   <ul class="nav flex-column">
-    <li class="nav-item mt-2">
-      <h6 class="text-white">Home</h6>
+    <li class="nav-item">
+      <h6 class="text-white">Vue Home</h6>
       <router-link to="/" class="nav-link text-warning">Home</router-link>
       <router-link to="/about" class="nav-link text-warning">About</router-link>
     </li>
     <li class="nav-item mt-2">
-      <h6 class="text-white">Menu01: Routing</h6>
+      <h6 class="text-white">Menu01 : Routing</h6>
       <router-link to="/menu01/exam01view" class="nav-link text-warning"
-        >선언적 화면 이동</router-link
+        >선언적 방식 화면 이동</router-link
       >
       <router-link to="/menu01/exam02view" class="nav-link text-warning"
         >프로그래밍 방식 화면 이동</router-link
       >
-      <router-link to="/menu01/exam03view" class="nav-link text-warning">중첩된 라우트</router-link>
+      <router-link to="/menu01/exam03view" class="nav-link text-warning">중첩 라우팅</router-link>
       <router-link to="/menu01/exam04view" class="nav-link text-warning"
         >이름이 있는 뷰</router-link
       >
@@ -22,7 +22,7 @@
       >
     </li>
     <li class="nav-item mt-2">
-      <h6 class="text-white">Menu02: Component</h6>
+      <h6 class="text-white">Menu02 : Component</h6>
       <router-link to="/menu02/exam01expressions" class="nav-link text-warning"
         >표현식 바인딩</router-link
       >
@@ -46,7 +46,7 @@
       >
     </li>
     <li class="nav-item mt-2">
-      <h6 class="text-white">Menu03: Event Handing & Watch</h6>
+      <h6 class="text-white">Menu03 : Event Handling & Wathch</h6>
       <router-link to="/menu03/exam01eventhandling" class="nav-link text-warning"
         >이벤트 처리</router-link
       >
@@ -55,10 +55,31 @@
       >
     </li>
     <li class="nav-item mt-2">
-      <h6 class="text-white">Menu04: Data Delivery</h6>
+      <h6 class="text-white">Menu04 : Data Delivery</h6>
       <router-link to="/menu04/exam01props" class="nav-link text-warning"
         >부모에서 자식으로 전달(props 이용)</router-link
+      >
+      <router-link to="/menu04/exam02eventemit" class="nav-link text-warning"
+        >자식에서 부모로 전달(event 이용)</router-link
+      >
+      <router-link to="/menu04/exam03inject" class="nav-link text-warning"
+        >의존 데이터 삽입(inject 이용)</router-link
+      >
+      <router-link to="/menu04/exam04ref" class="nav-link text-warning"
+        >Ref를 이용한 접근</router-link
+      >
+    </li>
+    <li class="nav-item mt-2">
+      <h6 class="text-white">Menu05 : LifeCycle Hooks</h6>
+      <router-link to="/menu05/exam01lifecyclehook" class="nav-link text-warning"
+        >라이프사이클 훅</router-link
       >
     </li>
   </ul>
 </template>
+
+<script>
+export default {
+  name: "AppMenu",
+};
+</script>

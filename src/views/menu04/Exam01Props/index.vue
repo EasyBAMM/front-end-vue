@@ -10,17 +10,32 @@
         :productKind="pkind"
         :productPrice="1000"
       />
+      <hr />
+      <child-b :product="product" v-bind="product" />
+      <hr />
+      <child-c
+        :propA="3"
+        :propB="5"
+        :propC="7"
+        :propD="'string-data'"
+        :propE="9"
+        :propF="{ message: 'hello vue' }"
+        :propG="['red', 'green', 'blue']"
+        :propI="5"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import ChildA from "./ChildA.vue";
+import ChildB from "./ChildB.vue";
+import ChildC from "./ChildC.vue";
 export default {
   // 컴포넌트의 대표이름(devtools에 나오는 이름)
   name: "Exam01Props",
   // 추가하고 싶은 컴포넌트 등록(import something from "/path")
-  components: { ChildA },
+  components: { ChildA, ChildB, ChildC },
   // 컴포넌트 데이터 정의
   data() {
     return {
@@ -29,6 +44,10 @@ export default {
       pno: "1",
       pkind: "bag",
       pprice: 1000,
+      product: {
+        no: 2,
+        kind: "정장",
+      },
     };
   },
   // 컴포넌트 메소드 정의
