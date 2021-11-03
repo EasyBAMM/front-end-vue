@@ -26,7 +26,7 @@ export default {
   created() {
     console.log("Exam06View 컴포넌트가 실행됨");
     console.log(this.$route);
-    console.log(this.$route.params.bono);
+    console.log(this.$route.params.bno);
   },
   props: ["bno"],
 };
